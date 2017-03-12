@@ -32,10 +32,10 @@ char_info.blank? # => true / false
 
 This library knows of four different kinds of encodings:
 
-- **:unicode** Unicode familiy of multibyte encodings (*UTF-\**)
+- **:unicode** Unicode familiy of multibyte encodings (*UTF-X*)
 - **:ascii** 7-Bit ASCII (*US-ASCII*)
 - **:binary** Arbitrary string (*ASCII-8BIT*)
-- **:byte ** Known byte encoding (*ISO-8859-\**, *Windows-\**)
+- **:byte** Known byte encoding (*ISO-8859-X*, *Windows-X*)
 
 Other encodings are not supported, yet.
 
@@ -47,11 +47,11 @@ Validness is determined by Ruby's String#valid_encoding?
 
 ### `unicode?`
 
-`true` for Unicode encodings (`UTF-*`)
+`true` for Unicode encodings (`UTF-X`)
 
 ### `control?`
 
-Control characters are codepoints in the is C0, delete or C1 control character range.
+Control characters are codepoints in the is [C0, delete or C1 control character range](https://en.wikipedia.org/wiki/C0_and_C1_control_codes).
 
 ### `assigned?`
 
