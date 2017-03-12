@@ -51,7 +51,7 @@ class ByteCharacteristics < Characteristics
   ].freeze
 
   EXTRA_BLANKS = {
-    0xA0 => /^(ISO-8859-|Windows-)/,
+    0xA0 => /^(ISO-8859-|Windows-125)/,
     0x9D => /^Windows-(1256)/,
     0x9F => /^Windows-(1256)/,
   }.freeze

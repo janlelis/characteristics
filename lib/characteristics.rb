@@ -14,7 +14,7 @@ class Characteristics
       :binary
     when /^UTF-/
       :unicode
-    when /^ISO-8859-/, /^Windows/
+    when /^ISO-8859-/, /^Windows-125/
       :byte
     else
       raise ArgumentError, "encoding <#{encoding_name}> not supported"

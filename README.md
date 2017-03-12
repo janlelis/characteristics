@@ -35,7 +35,7 @@ This library knows of four different kinds of encodings:
 - **:unicode** Unicode familiy of multibyte encodings (*UTF-X*)
 - **:ascii** 7-Bit ASCII (*US-ASCII*)
 - **:binary** Arbitrary string (*ASCII-8BIT*)
-- **:byte** Known byte encoding (*ISO-8859-X*, *Windows-X*)
+- **:byte** Known byte encoding (*ISO-8859-X*, *Windows-125X*)
 
 Other encodings are not supported, yet.
 
