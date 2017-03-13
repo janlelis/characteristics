@@ -26,6 +26,7 @@ char_info.unicode? # => true / false
 char_info.assigned? # => true / false
 char_info.control? # => true / false
 char_info.blank? # => true / false
+char_info.format? # => true / false
 ```
 
 ## Types of Encodings
@@ -62,6 +63,10 @@ Control characters are codepoints in the is [C0, delete or C1 control character 
 ### `blank?`
 
 The library includes a list of characters that might not be rendered visually. This list does not include unassigned codepoints, control characters (except for `\t`, `\n`, `\v`, `\f`, `\r`), or special formatting characters (right-to-left marker, variation selectors, etc).
+
+### `format?`
+
+This flag is `true` only for special formatting characters, which are not control characters, like Right-to-left marks. In Unicode, this means codepoints with the General Category of **Cf**.
 
 ## Todo
 

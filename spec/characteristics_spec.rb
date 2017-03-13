@@ -18,6 +18,10 @@ describe Characteristics do
     Characteristics.create(char.force_encoding(encoding)).blank?
   end
 
+  def format?(char)
+    Characteristics.create(char.force_encoding(encoding)).format?
+  end
+
   describe UnicodeCharacteristics do
     describe "UTF-*" do
       let(:encoding) { "UTF-8" }
@@ -42,6 +46,11 @@ describe Characteristics do
       it "is blank or not" do
         assert blank? "\x20"
         refute blank? "\x21"
+      end
+
+      it "is format or not" do
+        assert format? "\uFFF9"
+        refute format? "\x21"
       end
     end
   end
@@ -68,6 +77,10 @@ describe Characteristics do
         assert blank? "\x20"
         refute blank? "\x21"
       end
+
+      it "is never format" do
+        refute format? "\x21"
+      end
     end
   end
 
@@ -93,6 +106,10 @@ describe Characteristics do
       it "is blank or not" do
         assert blank? "\x20"
         refute blank? "\x21"
+      end
+
+      it "is never format" do
+        refute format? "\x21"
       end
     end
   end
@@ -121,6 +138,10 @@ describe Characteristics do
         it "is blank or not" do
           assert blank? "\x20"
           refute blank? "\x21"
+        end
+
+        it "is never format" do
+          refute format? "\x21"
         end
       end
 
@@ -164,6 +185,10 @@ describe Characteristics do
           assert blank? "\x20"
           refute blank? "\x21"
         end
+
+        it "is never format" do
+          refute format? "\x21"
+        end
       end
 
       # TODO
@@ -199,6 +224,10 @@ describe Characteristics do
         it "is blank or not" do
           assert blank? "\x20"
           refute blank? "\x21"
+        end
+
+        it "is never format" do
+          refute format? "\x21"
         end
       end
 

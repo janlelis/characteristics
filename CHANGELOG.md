@@ -3,6 +3,7 @@
 ### 0.3.0
 
 * Add soft-hyphen to single byte encodings
+* Add format? property (e.g. RLM)
 
 ### 0.2.0
 

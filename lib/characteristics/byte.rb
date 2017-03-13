@@ -131,6 +131,11 @@ class ByteCharacteristics < Characteristics
     0xFF => /^(IBM(?!864)|CP)/,
   }.freeze
 
+  FORMATS = {
+    0xFD => /^(ISO-8859-8|Windows-(1255|1256))/,
+    0xFE => /^(ISO-8859-8|Windows-(1255|1256))/,
+  }.freeze
+
   def initialize(char)
     super
     @ord = char.ord
@@ -148,6 +153,10 @@ class ByteCharacteristics < Characteristics
 
   def encoding_has_c1?
     !!(HAS_C1 =~ @encoding_name)
+  end
+
+  def unicode?
+    false
   end
 
   def assigned?
@@ -174,5 +183,9 @@ class ByteCharacteristics < Characteristics
     BLANKS.include?(@ord) ||
     SEPARATORS.include?(@ord) ||
     EXTRA_BLANKS[@ord] =~ @encoding_name
+  end
+
+  def format?
+    FORMATS[@ord] =~ @encoding_name
   end
 end

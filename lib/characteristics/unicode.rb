@@ -100,4 +100,8 @@ class UnicodeCharacteristics < Characteristics
   def blank?
     @is_valid && ( BLANKS.include?(@ord) || SEPARATORS.include?(@ord) )
   end
+
+  def format?
+    @is_valid && @category == "Cf"
+  end
 end

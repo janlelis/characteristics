@@ -16,6 +16,10 @@ class AsciiCharacteristics < Characteristics
     @ord = char.ord if @is_valid
   end
 
+  def unicode?
+    false
+  end
+
   def assigned?
     true
   end
@@ -38,5 +42,9 @@ class AsciiCharacteristics < Characteristics
 
   def blank?
     @is_valid && ( BLANKS.include?(@ord) || SEPARATORS.include?(@ord) )
+  end
+
+  def format?
+    false
   end
 end

@@ -53,7 +53,6 @@ class Characteristics
   end
 
   def unicode?
-    false
   end
 
   def assigned?
@@ -63,5 +62,8 @@ class Characteristics
   end
 
   def blank?
+  end
+
+  def format?
   end
 end

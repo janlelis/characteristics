@@ -21,6 +21,10 @@ class BinaryCharacteristics < Characteristics
     true
   end
 
+  def unicode?
+    false
+  end
+
   def assigned?
     true
   end
@@ -39,5 +43,9 @@ class BinaryCharacteristics < Characteristics
 
   def blank?
     BLANKS.include?(@ord) || SEPARATORS.include?(@ord)
+  end
+
+  def format?
+    false
   end
 end
