@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+### 0.3.0
+
+* Add soft-hyphen to single byte encodings
+
 ### 0.2.0
 
 * Fix detection of supported Windows encodings and some unassigned codepoints

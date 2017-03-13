@@ -124,9 +124,11 @@ class ByteCharacteristics < Characteristics
 
   EXTRA_BLANKS = {
     0xA0 => /^(ISO-8859-|Windows-125)/,
+    0xAD => /^(ISO-8859-(?!11)|Windows-125)/,
     0x9D => /^Windows-(1256)/,
-    0x9F => /^Windows-(1256)/,
-    0xFF => /^(IBM(?!864)|CP)/
+    0x9E => /^Windows-(1256)/,
+    0xF0 => /^(IBM(?!437|737|86)|IBM869|CP)/,
+    0xFF => /^(IBM(?!864)|CP)/,
   }.freeze
 
   def initialize(char)
