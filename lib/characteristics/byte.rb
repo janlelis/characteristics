@@ -124,6 +124,7 @@ class ByteCharacteristics < Characteristics
 
   EXTRA_BLANKS = {
     0xA0 => /^(ISO-8859-|Windows-125)/,
+    0xA1 => /^IBM864/,
     0xAD => /^(ISO-8859-(?!11)|Windows-125)/,
     0x9D => /^Windows-(1256)/,
     0x9E => /^Windows-(1256)/,
