@@ -41,6 +41,8 @@ class Characteristics
   attr_reader :encoding
 
   def initialize(char)
+    raise ArgumentError, "Do not use abstract Characteristics.new(char) directly, please use Characteristics.create(char)" if self.class == Characteristics
+
     @is_valid = char.valid_encoding?
     @encoding = char.encoding
     @encoding_name = @encoding.name
