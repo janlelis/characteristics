@@ -248,5 +248,99 @@ describe Characteristics do
       # describe "IBM865" do
       # describe "IBM866" do
     end
+
+    describe "mac*" do
+      describe "macRoman" do
+        let(:encoding) { "macRoman" }
+
+        it "is always valid" do
+          assert valid? "\x80"
+        end
+
+        it "is always assigned" do
+          assert assigned? "\x21"
+        end
+
+        it "is control or not" do
+          assert control? "\x1E"
+          refute control? "\x67"
+        end
+
+        it "is blank or not" do
+          assert blank? "\x20"
+          refute blank? "\x21"
+        end
+
+        it "is never format" do
+          refute format? "\x21"
+        end
+      end
+
+      # describe "macCentEuro" do
+      # describe "macCroatian" do
+      # describe "macCyrillic" do
+      # describe "macGreek" do
+      # describe "macIceland" do
+      # describe "macRomania" do
+      # describe "macThai" do
+      # describe "macTurkish" do
+      # describe "macUkraine" do
+    end
+
+    describe "TIS-620/Windows-874" do
+      describe "TIS-620" do
+        let(:encoding) { "TIS-620" }
+
+        it "is always valid" do
+          assert valid? "\x80"
+        end
+
+        it "is assigned or not" do
+          assert assigned? "\x21"
+          refute assigned? "\xA0"
+        end
+
+        it "is control or not" do
+          assert control? "\x1E"
+          refute control? "\x67"
+        end
+
+        it "is blank or not" do
+          assert blank? "\x20"
+          refute blank? "\x21"
+        end
+
+        it "is never format" do
+          refute format? "\x21"
+        end
+      end
+
+      describe "Windows-874" do
+        let(:encoding) { "Windows-874" }
+
+        it "is always valid" do
+          assert valid? "\x80"
+        end
+
+        it "is assigned or not" do
+          assert assigned? "\xA0"
+          refute assigned? "\x99"
+        end
+
+        it "is control or not" do
+          assert control? "\x1E"
+          refute control? "\x67"
+        end
+
+        it "is blank or not" do
+          assert blank? "\x20"
+          refute blank? "\x21"
+        end
+
+        it "is never format" do
+          refute format? "\x21"
+        end
+      end
+    end
   end
 end

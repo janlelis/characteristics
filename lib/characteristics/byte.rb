@@ -1,32 +1,37 @@
 class ByteCharacteristics < Characteristics
-  HAS_C1 = /^(ISO-8859-)/
+  HAS_C1 = /^(ISO-8859-|TIS-620)/
 
   UNASSIGNED = {
     0x80 => /^(IBM869)/,
-    0x81 => /^(Windows-(1250|1252|1253|1254|1255|1257|1258)|IBM869)/,
-    0x82 => /^(IBM869)/,
-    0x83 => /^(Windows-(1250|1257)|IBM869)/,
-    0x84 => /^(IBM869)/,
+    0x81 => /^(Windows-(1250|1252|1253|1254|1255|1257|1258)|IBM869|Windows-874)/,
+    0x82 => /^(IBM869|Windows-874)/,
+    0x83 => /^(Windows-(1250|1257)|IBM869|Windows-874)/,
+    0x84 => /^(IBM869|Windows-874)/,
     0x85 => /^(IBM869)/,
-    0x87 => /^(IBM869)/,
-    0x88 => /^(Windows-(1250|1253|1257))/,
-    0x8A => /^(Windows-(1253|1255|1257|1258))/,
-    0x8C => /^(Windows-(1253|1255|1257))/,
-    0x8D => /^(Windows-(1252|1253|1254|1255|1258))/,
-    0x8E => /^(Windows-(1253|1254|1255|1258))/,
-    0x8F => /^(Windows-(1252|1253|1254|1255|1258))/,
+    0x86 => /^(Windows-874)/,
+    0x87 => /^(IBM869|Windows-874)/,
+    0x88 => /^(Windows-(1250|1253|1257)|Windows-874)/,
+    0x89 => /^(Windows-874)/,
+    0x8A => /^(Windows-(1253|1255|1257|1258)|Windows-874)/,
+    0x8B => /^(Windows-874)/,
+    0x8C => /^(Windows-(1253|1255|1257)|Windows-874)/,
+    0x8D => /^(Windows-(1252|1253|1254|1255|1258)|Windows-874)/,
+    0x8E => /^(Windows-(1253|1254|1255|1258)|Windows-874)/,
+    0x8F => /^(Windows-(1252|1253|1254|1255|1258)|Windows-874)/,
 
-    0x90 => /^(Windows-(1250|1252|1253|1254|1255|1257|1258))/,
+    0x90 => /^(Windows-(1250|1252|1253|1254|1255|1257|1258)|macThai|Windows-874)/,
     0x93 => /^(IBM869)/,
     0x94 => /^(IBM869)/,
-    0x98 => /^(Windows-(1250|1251|1253|1257))/,
-    0x9A => /^(Windows-(1253|1255|1257|1258))/,
-    0x9B => /^(IBM864)/,
-    0x9C => /^(Windows-(1253|1255|1257)|IBM864)/,
-    0x9D => /^(Windows-(1252|1253|1254|1255|1258))/,
-    0x9E => /^(Windows-(1253|1254|1255|1258))/,
-    0x9F => /^(Windows-(1253|1255|1257)|IBM864)/,
+    0x98 => /^(Windows-(1250|1251|1253|1257)|Windows-874)/,
+    0x99 => /^(Windows-874)/,
+    0x9A => /^(Windows-(1253|1255|1257|1258)|Windows-874)/,
+    0x9B => /^(IBM864|Windows-874)/,
+    0x9C => /^(Windows-(1253|1255|1257)|IBM864|Windows-874)/,
+    0x9D => /^(Windows-(1252|1253|1254|1255|1258)|Windows-874)/,
+    0x9E => /^(Windows-(1253|1254|1255|1258)|Windows-874)/,
+    0x9F => /^(Windows-(1253|1255|1257)|IBM864|macThai|Windows-874)/,
 
+    0xA0 => /^(TIS-620)/,
     0xA1 => /^(ISO-8859-(6|8)|Windows-(1257))/,
     0xA2 => /^(ISO-8859-(6))/,
     0xA3 => /^(ISO-8859-(6))/,
@@ -84,30 +89,30 @@ class ByteCharacteristics < Characteristics
     0xD8 => /^(ISO-8859-(8))/,
     0xD9 => /^(ISO-8859-(8)|Windows-(1255))/,
     0xDA => /^(ISO-8859-(8)|Windows-(1255))/,
-    0xDB => /^(ISO-8859-(6|8|11)|Windows-(1255))/,
-    0xDC => /^(ISO-8859-(6|8|11)|Windows-(1255))/,
-    0xDD => /^(ISO-8859-(6|8|11)|Windows-(1255))/,
-    0xDE => /^(ISO-8859-(6|8|11)|Windows-(1255))/,
+    0xDB => /^(ISO-8859-(6|8|11)|Windows-(1255)|TIS-620|Windows-874)/,
+    0xDC => /^(ISO-8859-(6|8|11)|Windows-(1255)|TIS-620|Windows-874)/,
+    0xDD => /^(ISO-8859-(6|8|11)|Windows-(1255)|TIS-620|Windows-874)/,
+    0xDE => /^(ISO-8859-(6|8|11)|Windows-(1255)|TIS-620|Windows-874)/,
     0xDF => /^(ISO-8859-(6)|Windows-(1255))/,
 
     0xE3 => /^(ISO-8859-(3))/,
     0xE7 => /^(IBM857)/,
 
-    0xF0 => /^(ISO-8859-(3))/,
+    0xF0 => /^(ISO-8859-(3))/, # mac: Treating F0 as always assigned
     0xF2 => /^(IBM857)/,
     0xF3 => /^(ISO-8859-(6))/,
     0xF4 => /^(ISO-8859-(6))/,
-    0xF5 => /^(ISO-8859-(6))/,
+    0xF5 => /^(ISO-8859-(6)|macTurkish)/,
     0xF6 => /^(ISO-8859-(6))/,
     0xF7 => /^(ISO-8859-(6))/,
     0xF8 => /^(ISO-8859-(6))/,
     0xF9 => /^(ISO-8859-(6))/,
     0xFA => /^(ISO-8859-(6))/,
     0xFB => /^(ISO-8859-(6|8)|Windows-(1255))/,
-    0xFC => /^(ISO-8859-(6|8|11)|Windows-(1255))/,
-    0xFD => /^(ISO-8859-(6|11))/,
-    0xFE => /^(ISO-8859-(6|11))/,
-    0xFF => /^(ISO-8859-(6|7|8|11)|Windows-(1253|1255)|IBM864)/,
+    0xFC => /^(ISO-8859-(6|8|11)|Windows-(1255)|macThai|TIS-620|Windows-874)/,
+    0xFD => /^(ISO-8859-(6|11)|macThai|TIS-620|Windows-874)/,
+    0xFE => /^(ISO-8859-(6|11)|macThai|TIS-620|Windows-874)/,
+    0xFF => /^(ISO-8859-(6|7|8|11)|Windows-(1253|1255)|IBM864|macGreek|macThai|TIS-620|Windows-874)/, # macGreek: Ruby does not know of soft hyphen at FF
   }.freeze
 
   BLANKS = [
@@ -123,13 +128,16 @@ class ByteCharacteristics < Characteristics
   ].freeze
 
   EXTRA_BLANKS = {
-    0xA0 => /^(ISO-8859-|Windows-125)/,
+    0xA0 => /^(ISO-8859-|Windows-125|macThai|Windows-874)/,
     0xA1 => /^IBM864/,
     0xAD => /^(ISO-8859-(?!11)|Windows-125)/,
     0x9D => /^Windows-(1256)/,
     0x9E => /^Windows-(1256)/,
+    0xCA => /^mac(?!Thai)/,
+    0xDB => /^macThai/,
+    0xDC => /^macThai/,
     0xF0 => /^(IBM(?!437|737|86)|IBM869|CP)/,
-    0xFF => /^(IBM(?!864)|CP)/,
+    0xFF => /^(IBM(?!864)|CP)/, # |macGreek, but is unnasigned in Ruby
   }.freeze
 
   FORMATS = {
@@ -143,12 +151,10 @@ class ByteCharacteristics < Characteristics
   end
 
   def encoding_has_c0?
-    # !!(HAS_C0 =~ @encoding_name)
     true
   end
 
   def encoding_has_delete?
-    # !!(HAS_C0 =~ @encoding_name)
     true
   end
 
