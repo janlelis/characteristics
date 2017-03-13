@@ -142,7 +142,7 @@ describe Characteristics do
       # describe "ISO-8859-16" do
     end
 
-    describe "Windows-*" do
+    describe "Windows-125*" do
       describe "Windows-1252" do
         let(:encoding) { "Windows-1252" }
 
@@ -176,6 +176,48 @@ describe Characteristics do
       # describe "Windows-1256" do
       # describe "Windows-1257" do
       # describe "Windows-1258" do
+    end
+
+    describe "IBM*, CP85*" do
+      describe "IBM869" do
+        let(:encoding) { "IBM869" }
+
+        it "is always valid" do
+          assert valid? "\x80"
+        end
+
+        it "is assigned or not" do
+          assert assigned? "\x21"
+          refute assigned? "\x80"
+        end
+
+        it "is control or not" do
+          assert control? "\x1E"
+          refute control? "\x67"
+        end
+
+        it "is blank or not" do
+          assert blank? "\x20"
+          refute blank? "\x21"
+        end
+      end
+
+      # describe "IBM437" do
+      # describe "IBM737" do
+      # describe "IBM775" do
+      # describe "CP850" do
+      # describe "IBM852" do
+      # describe "CP852" do
+      # describe "IBM855" do
+      # describe "CP855" do
+      # describe "IBM857" do
+      # describe "IBM860" do
+      # describe "IBM861" do
+      # describe "IBM862" do
+      # describe "IBM863" do
+      # describe "IBM864" do
+      # describe "IBM865" do
+      # describe "IBM866" do
     end
   end
 end

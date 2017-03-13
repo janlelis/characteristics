@@ -2,8 +2,13 @@ class ByteCharacteristics < Characteristics
   HAS_C1 = /^(ISO-8859-)/
 
   UNASSIGNED = {
-    0x81 => /^(Windows-(1250|1252|1253|1254|1255|1257|1258))/,
-    0x83 => /^(Windows-(1250|1257))/,
+    0x80 => /^(IBM869)/,
+    0x81 => /^(Windows-(1250|1252|1253|1254|1255|1257|1258)|IBM869)/,
+    0x82 => /^(IBM869)/,
+    0x83 => /^(Windows-(1250|1257)|IBM869)/,
+    0x84 => /^(IBM869)/,
+    0x85 => /^(IBM869)/,
+    0x87 => /^(IBM869)/,
     0x88 => /^(Windows-(1250|1253|1257))/,
     0x8A => /^(Windows-(1253|1255|1257|1258))/,
     0x8C => /^(Windows-(1253|1255|1257))/,
@@ -12,18 +17,21 @@ class ByteCharacteristics < Characteristics
     0x8F => /^(Windows-(1252|1253|1254|1255|1258))/,
 
     0x90 => /^(Windows-(1250|1252|1253|1254|1255|1257|1258))/,
+    0x93 => /^(IBM869)/,
+    0x94 => /^(IBM869)/,
     0x98 => /^(Windows-(1250|1251|1253|1257))/,
     0x9A => /^(Windows-(1253|1255|1257|1258))/,
-    0x9C => /^(Windows-(1253|1255|1257))/,
+    0x9B => /^(IBM864)/,
+    0x9C => /^(Windows-(1253|1255|1257)|IBM864)/,
     0x9D => /^(Windows-(1252|1253|1254|1255|1258))/,
     0x9E => /^(Windows-(1253|1254|1255|1258))/,
-    0x9F => /^(Windows-(1253|1255|1257))/,
+    0x9F => /^(Windows-(1253|1255|1257)|IBM864)/,
 
     0xA1 => /^(ISO-8859-(6|8)|Windows-(1257))/,
     0xA2 => /^(ISO-8859-(6))/,
     0xA3 => /^(ISO-8859-(6))/,
     0xA5 => /^(ISO-8859-(3|6)|Windows-(1257))/,
-    0xA6 => /^(ISO-8859-(6))/,
+    0xA6 => /^(ISO-8859-(6)|IBM864)/,
     0xA7 => /^(ISO-8859-(6))/,
     0xA8 => /^(ISO-8859-(6))/,
     0xA9 => /^(ISO-8859-(6))/,
@@ -70,7 +78,7 @@ class ByteCharacteristics < Characteristics
     0xD2 => /^(ISO-8859-(7|8)|Windows-(1253))/,
     0xD3 => /^(ISO-8859-(8))/,
     0xD4 => /^(ISO-8859-(8))/,
-    0xD5 => /^(ISO-8859-(8))/,
+    0xD5 => /^(ISO-8859-(8)|IBM857)/, # IBM857: Ruby does not support euro sign
     0xD6 => /^(ISO-8859-(8))/,
     0xD7 => /^(ISO-8859-(8))/,
     0xD8 => /^(ISO-8859-(8))/,
@@ -83,8 +91,10 @@ class ByteCharacteristics < Characteristics
     0xDF => /^(ISO-8859-(6)|Windows-(1255))/,
 
     0xE3 => /^(ISO-8859-(3))/,
+    0xE7 => /^(IBM857)/,
 
     0xF0 => /^(ISO-8859-(3))/,
+    0xF2 => /^(IBM857)/,
     0xF3 => /^(ISO-8859-(6))/,
     0xF4 => /^(ISO-8859-(6))/,
     0xF5 => /^(ISO-8859-(6))/,
@@ -97,7 +107,7 @@ class ByteCharacteristics < Characteristics
     0xFC => /^(ISO-8859-(6|8|11)|Windows-(1255))/,
     0xFD => /^(ISO-8859-(6|11))/,
     0xFE => /^(ISO-8859-(6|11))/,
-    0xFF => /^(ISO-8859-(6|7|8|11)|Windows-(1253|1255))/,
+    0xFF => /^(ISO-8859-(6|7|8|11)|Windows-(1253|1255)|IBM864)/,
   }.freeze
 
   BLANKS = [
@@ -116,6 +126,7 @@ class ByteCharacteristics < Characteristics
     0xA0 => /^(ISO-8859-|Windows-125)/,
     0x9D => /^Windows-(1256)/,
     0x9F => /^Windows-(1256)/,
+    0xFF => /^(IBM(?!864)|CP)/
   }.freeze
 
   def initialize(char)
