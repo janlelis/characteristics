@@ -342,5 +342,59 @@ describe Characteristics do
         end
       end
     end
+
+    describe "KOI8-*" do
+      describe "KOI8-R" do
+        let(:encoding) { "KOI8-R" }
+
+        it "is always valid" do
+          assert valid? "\x80"
+        end
+
+        it "is always assigned" do
+          assert assigned? "\x21"
+        end
+
+        it "is control or not" do
+          assert control? "\x1E"
+          refute control? "\x67"
+        end
+
+        it "is blank or not" do
+          assert blank? "\x20"
+          refute blank? "\x21"
+        end
+
+        it "is never format" do
+          refute format? "\x21"
+        end
+      end
+
+      describe "KOI8-U" do
+        let(:encoding) { "KOI8-U" }
+
+        it "is always valid" do
+          assert valid? "\x80"
+        end
+
+        it "is always assigned" do
+          assert assigned? "\x21"
+        end
+
+        it "is control or not" do
+          assert control? "\x1E"
+          refute control? "\x67"
+        end
+
+        it "is blank or not" do
+          assert blank? "\x20"
+          refute blank? "\x21"
+        end
+
+        it "is never format" do
+          refute format? "\x21"
+        end
+      end
+    end
   end
 end

@@ -131,6 +131,7 @@ class ByteCharacteristics < Characteristics
     0xA0 => /^(ISO-8859-|Windows-125|macThai|Windows-874)/,
     0xA1 => /^IBM864/,
     0xAD => /^(ISO-8859-(?!11)|Windows-125)/,
+    0x9A => /^KOI8-/,
     0x9D => /^Windows-(1256)/,
     0x9E => /^Windows-(1256)/,
     0xCA => /^mac(?!Thai)/,

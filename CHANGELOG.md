@@ -4,7 +4,7 @@
 
 * Add soft-hyphen to single byte encodings
 * Add format? property (e.g. RLM)
-* Support more encodings: IBMX, CP85X, macX, TIS-620, Windows-874
+* Support more encodings: IBMX, CP85X, macX, TIS-620, Windows-874, KOI8-X
 
 ### 0.2.0
 
