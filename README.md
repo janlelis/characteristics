@@ -33,10 +33,14 @@ char_info.format? # => true / false
 
 This library knows of four different kinds of encodings:
 
-- **:unicode** Unicode familiy of multibyte encodings (*UTF-X*)
-- **:ascii** 7-Bit ASCII (*US-ASCII*)
-- **:binary** Arbitrary string (*ASCII-8BIT*)
-- **:byte** Known single byte encoding (*ISO-8859-X*, *Windows-125X*, *IBMX*, *CP85X*, *macX*, *TIS-620*, *Windows-874*, **KOI-X**)
+- **:unicode** Unicode familiy of multi-byte encodings
+  - *UTF-X*
+- **:byte** Known single-byte encoding
+  - *ISO-8859-X*, *Windows-125X*, *IBMX*, *CP85X*, *macX*, *TIS-620*, *Windows-874*, *KOI-X*
+- **:ascii** 7-Bit ASCII
+  - *US-ASCII*
+- **:binary** Arbitrary string
+  - *ASCII-8BIT*
 
 Other encodings are not supported, yet.
 
