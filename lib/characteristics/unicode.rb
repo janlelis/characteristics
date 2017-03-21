@@ -8,6 +8,8 @@ class UnicodeCharacteristics < Characteristics
     0x115F,
     0x1160,
     0x1680,
+    0x17B4,
+    0x17B5,
     0x180E,
     0x2000,
     0x2001,

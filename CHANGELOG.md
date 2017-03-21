@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+### 0.3.1
+
+* Add two Khmer blanks (U+17B4, U+17B5)
+
 ### 0.3.0
 
 * Add soft-hyphen to single byte encodings
