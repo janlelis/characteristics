@@ -67,6 +67,8 @@ class UnicodeCharacteristics < Characteristics
     0x2029,
   ].freeze
 
+  attr_reader :category
+
   def initialize(char)
     super
 
