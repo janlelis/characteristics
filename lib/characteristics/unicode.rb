@@ -42,6 +42,7 @@ class UnicodeCharacteristics < Characteristics
     0x3164,
     0x2800,
     0xFEFF,
+    0x110B1,
     0x1BCA0,
     0x1BCA1,
     0x1BCA2,

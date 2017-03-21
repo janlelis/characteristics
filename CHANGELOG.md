@@ -3,6 +3,7 @@
 ### 0.3.1
 
 * Add two Khmer blanks (U+17B4, U+17B5)
+* Add one Kaithi blank (U+110B1)
 
 ### 0.3.0
 
