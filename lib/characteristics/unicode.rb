@@ -111,4 +111,22 @@ class UnicodeCharacteristics < Characteristics
   def format?
     @is_valid && @category == "Cf"
   end
+
+  def kddi?
+    encoding_has_kddi? && ( @ord >= 0xE468 && @ord <= 0xE5DF ||
+                            @ord >= 0xEA80 && @ord <= 0xEB8E )
+  end
+
+  def softbank?
+    encoding_has_softbank? && ( @ord >= 0xE001 && @ord <= 0xE05A ||
+                                @ord >= 0xE101 && @ord <= 0xE15A ||
+                                @ord >= 0xE201 && @ord <= 0xE25A ||
+                                @ord >= 0xE301 && @ord <= 0xE34D ||
+                                @ord >= 0xE401 && @ord <= 0xE44C ||
+                                @ord >= 0xE501 && @ord <= 0xE53E )
+  end
+
+  def docomo?
+    encoding_has_docomo? && ( @ord >= 0xE63E && @ord <= 0xE757 )
+  end
 end

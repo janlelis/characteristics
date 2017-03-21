@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+### 0.4.0
+
+* Support Japanese Emojis (KDDI / SoftBank / DoCoMo) for Unicode
+
 ### 0.3.1
 
 * Add two Khmer blanks (U+17B4, U+17B5)

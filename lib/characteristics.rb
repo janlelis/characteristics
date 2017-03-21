@@ -12,7 +12,7 @@ class Characteristics
       :ascii
     when "ASCII-8BIT"
       :binary
-    when /^UTF-/
+    when /^UTF-?/
       :unicode
     when /^ISO-8859-/, /^Windows-125/, /^(IBM|CP85)/, /^mac/, 'TIS-620', 'Windows-874', /^KOI8-/
       :byte
@@ -65,5 +65,31 @@ class Characteristics
   end
 
   def format?
+  end
+
+  # private use emojis
+  def kddi?
+  end
+
+  # private use emojis
+  def softbank?
+  end
+
+  # private use emojis
+  def docomo?
+  end
+
+  private
+
+  def encoding_has_kddi?
+    @encoding_name.end_with? "KDDI"
+  end
+
+  def encoding_has_softbank?
+    @encoding_name.end_with? "SoftBank"
+  end
+
+  def encoding_has_docomo?
+    @encoding_name.end_with? "DoCoMo"
   end
 end

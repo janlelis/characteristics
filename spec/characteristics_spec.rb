@@ -23,7 +23,7 @@ describe Characteristics do
   end
 
   describe UnicodeCharacteristics do
-    describe "UTF-*" do
+    describe "UTF*" do
       let(:encoding) { "UTF-8" }
 
       it "is valid or not" do
@@ -51,6 +51,26 @@ describe Characteristics do
       it "is format or not" do
         assert format? "\uFFF9"
         refute format? "\x21"
+      end
+    end
+
+    describe "Japanese Emojis" do
+      it "can be a KDDI emoji" do
+        encoding = "UTF8-KDDI"
+        assert Characteristics.create("\uE468".force_encoding(encoding)).kddi?
+        refute Characteristics.create("A".force_encoding(encoding)).kddi?
+      end
+
+      it "can be a SoftBank emoji" do
+        encoding = "UTF8-SoftBank"
+        assert Characteristics.create("\uE001".force_encoding(encoding)).softbank?
+        refute Characteristics.create("A".force_encoding(encoding)).softbank?
+      end
+
+      it "can be a DoCoMo emoji" do
+        encoding = "UTF8-DoCoMo"
+        assert Characteristics.create("\uE63E".force_encoding(encoding)).docomo?
+        refute Characteristics.create("A".force_encoding(encoding)).docomo?
       end
     end
   end
