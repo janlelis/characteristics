@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BinaryCharacteristics < Characteristics
   BLANKS = [
     0x9,

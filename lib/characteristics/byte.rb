@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ByteCharacteristics < Characteristics
   HAS_C1 = /^(ISO-8859-|TIS-620)/
 

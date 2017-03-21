@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative "characteristics/version"
 
 require_relative "characteristics/ascii"
