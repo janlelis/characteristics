@@ -5,6 +5,8 @@ class UnicodeCharacteristics < Characteristics
     0x0009,
     0x0020,
     0x00AD,
+    0x061C,
+    0x070F,
     0x115F,
     0x1160,
     0x1680,

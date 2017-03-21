@@ -4,6 +4,8 @@
 
 * Add two Khmer blanks (U+17B4, U+17B5)
 * Add one Kaithi blank (U+110B1)
+* Add one Syriac blank (U+070F)
+* Add one Arabic blank (U+061C)
 * Make general category readable for UnicodeCharacteristics
 
 ### 0.3.0
