@@ -92,4 +92,16 @@ class Characteristics
   def encoding_has_docomo?
     @encoding_name.end_with? "DoCoMo"
   end
+
+  def encoding_has_c0?
+    true
+  end
+
+  def encoding_has_delete?
+    true
+  end
+
+  def encoding_has_c1?
+    false
+  end
 end

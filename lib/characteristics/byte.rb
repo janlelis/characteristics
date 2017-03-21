@@ -151,18 +151,6 @@ class ByteCharacteristics < Characteristics
     @ord = char.ord
   end
 
-  def encoding_has_c0?
-    true
-  end
-
-  def encoding_has_delete?
-    true
-  end
-
-  def encoding_has_c1?
-    !!(HAS_C1 =~ @encoding_name)
-  end
-
   def unicode?
     false
   end
@@ -195,5 +183,11 @@ class ByteCharacteristics < Characteristics
 
   def format?
     FORMATS[@ord] =~ @encoding_name
+  end
+
+  private
+
+  def encoding_has_c1?
+    !!(HAS_C1 =~ @encoding_name)
   end
 end

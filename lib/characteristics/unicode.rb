@@ -129,4 +129,10 @@ class UnicodeCharacteristics < Characteristics
   def docomo?
     encoding_has_docomo? && ( @ord >= 0xE63E && @ord <= 0xE757 )
   end
+
+  private
+
+  def encoding_has_c1?
+    true
+  end
 end
