@@ -29,6 +29,8 @@ class UnicodeCharacteristics < Characteristics
     0x200B,
     0x200C,
     0x200D,
+    0x200E,
+    0x200F,
     0x202F,
     0x205F,
     0x2060,

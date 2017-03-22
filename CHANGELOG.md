@@ -3,6 +3,7 @@
 ### 0.4.1
 
 * Treat NEL (in C1 area) as separator
+* Also treat RLM and LRM as blanks
 
 ### 0.4.0
 
