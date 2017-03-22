@@ -1,7 +1,8 @@
 ## CHANGELOG
 
-### 0.4.1
+### 0.5.0
 
+* Add bidi_control? property
 * Treat NEL (in C1 area) as separator
 * Also treat RLM and LRM as blanks
 

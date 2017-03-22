@@ -187,6 +187,10 @@ class ByteCharacteristics < Characteristics
     FORMATS[@ord] =~ @encoding_name
   end
 
+  def bidi_control?
+    format?
+  end
+
   private
 
   def encoding_has_c1?

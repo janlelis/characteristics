@@ -69,6 +69,9 @@ class Characteristics
   def format?
   end
 
+  def bidi_control?
+  end
+
   # private use emojis
   def kddi?
   end

@@ -22,6 +22,10 @@ describe Characteristics do
     Characteristics.create(char.force_encoding(encoding)).format?
   end
 
+  def bidi_control?(char)
+    Characteristics.create(char.force_encoding(encoding)).bidi_control?
+  end
+
   describe UnicodeCharacteristics do
     describe "UTF*" do
       let(:encoding) { "UTF-8" }
@@ -51,6 +55,11 @@ describe Characteristics do
       it "is format or not" do
         assert format? "\uFFF9"
         refute format? "\x21"
+      end
+
+      it "is bidi_control or not" do
+        assert bidi_control? "\u202D"
+        refute bidi_control? "\x21"
       end
     end
 
@@ -101,6 +110,10 @@ describe Characteristics do
       it "is never format" do
         refute format? "\x21"
       end
+
+      it "is never bidi_control" do
+        refute bidi_control? "\x21"
+      end
     end
   end
 
@@ -130,6 +143,10 @@ describe Characteristics do
 
       it "is never format" do
         refute format? "\x21"
+      end
+
+      it "is never bidi_control" do
+        refute bidi_control? "\x21"
       end
     end
   end
@@ -162,6 +179,10 @@ describe Characteristics do
 
         it "is never format" do
           refute format? "\x21"
+        end
+
+        it "is never bidi_control" do
+          refute bidi_control? "\x21"
         end
       end
 
@@ -209,6 +230,10 @@ describe Characteristics do
         it "is never format" do
           refute format? "\x21"
         end
+
+        it "is never bidi_control" do
+          refute bidi_control? "\x21"
+        end
       end
 
       # TODO
@@ -248,6 +273,10 @@ describe Characteristics do
 
         it "is never format" do
           refute format? "\x21"
+        end
+
+        it "is never bidi_control" do
+          refute bidi_control? "\x21"
         end
       end
 
@@ -294,6 +323,10 @@ describe Characteristics do
         it "is never format" do
           refute format? "\x21"
         end
+
+        it "is never bidi_control" do
+          refute bidi_control? "\x21"
+        end
       end
 
       # describe "macCentEuro" do
@@ -333,6 +366,10 @@ describe Characteristics do
         it "is never format" do
           refute format? "\x21"
         end
+
+        it "is never bidi_control" do
+          refute bidi_control? "\x21"
+        end
       end
 
       describe "Windows-874" do
@@ -359,6 +396,10 @@ describe Characteristics do
 
         it "is never format" do
           refute format? "\x21"
+        end
+
+        it "is never bidi_control" do
+          refute bidi_control? "\x21"
         end
       end
     end
@@ -388,6 +429,10 @@ describe Characteristics do
         it "is never format" do
           refute format? "\x21"
         end
+
+        it "is never bidi_control" do
+          refute bidi_control? "\x21"
+        end
       end
 
       describe "KOI8-U" do
@@ -413,6 +458,10 @@ describe Characteristics do
 
         it "is never format" do
           refute format? "\x21"
+        end
+
+        it "is never bidi_control" do
+          refute bidi_control? "\x21"
         end
       end
     end

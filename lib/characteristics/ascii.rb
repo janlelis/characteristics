@@ -49,4 +49,8 @@ class AsciiCharacteristics < Characteristics
   def format?
     false
   end
+
+  def bidi_control?
+    false
+  end
 end

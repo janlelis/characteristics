@@ -74,6 +74,21 @@ class UnicodeCharacteristics < Characteristics
     0x2029,
   ].freeze
 
+  BIDI_CONTROL = [
+    0x061C,
+    0x200E,
+    0x200F,
+    0x202A,
+    0x202B,
+    0x202C,
+    0x202D,
+    0x202E,
+    0x2066,
+    0x2067,
+    0x2068,
+    0x2069,
+  ].freeze
+
   attr_reader :category
 
   def initialize(char)
@@ -115,6 +130,10 @@ class UnicodeCharacteristics < Characteristics
 
   def format?
     @is_valid && @category == "Cf"
+  end
+
+  def bidi_control?
+    @is_valid && BIDI_CONTROL.include?(@ord)
   end
 
   def kddi?
