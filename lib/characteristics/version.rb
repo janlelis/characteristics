@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
 class Characteristics
-  VERSION = "0.4.0".freeze
+  VERSION = "0.5.0".freeze
 end
