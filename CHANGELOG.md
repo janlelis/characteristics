@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+### 0.4.1
+
+* Treat NEL (in C1 area) as separator
+
 ### 0.4.0
 
 * Support Japanese Emojis (KDDI / SoftBank / DoCoMo) for Unicode

@@ -67,6 +67,7 @@ class UnicodeCharacteristics < Characteristics
     0x000B,
     0x000C,
     0x000D,
+    0x0085,
     0x2028,
     0x2029,
   ].freeze
