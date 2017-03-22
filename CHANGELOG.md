@@ -4,7 +4,8 @@
 
 * Add bidi_control? property
 * Treat NEL (in C1 area) as separator
-* Also treat RLM and LRM as blanks
+* Treat RLM and LRM as blanks
+* Treat CGJ as blank
 
 ### 0.4.0
 
