@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+### 0.5.1
+
+* (Proper version of gem on rubygems.org)
+
 ### 0.5.0
 
 * Add bidi_control? property
