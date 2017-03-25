@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+### 0.5.2
+
+* Add another Hangul blank (U+FFA0)
+
 ### 0.5.1
 
 * (Proper version of gem on rubygems.org)
