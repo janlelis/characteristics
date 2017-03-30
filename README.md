@@ -80,7 +80,6 @@ This flag is `true` only for special formatting characters, which are not contro
 ## Todo
 
 - Support all non-dummy encodings that Ruby supports
-- Complete test matrix
 
 ## MIT License
 
