@@ -7,7 +7,7 @@ A Ruby library which provides some basic information about how characters behave
 - Is a character a special control character?
 - Could a character be invisible (blank)?
 
-The [unibits](https://github.com/janlelis/unibits) gem makes use of this data to visualize it accordingliy.
+The [unibits](https://github.com/janlelis/unibits) and [uniscribe](https://github.com/janlelis/uniscribe) gems makes use of this data to visualize it accordingliy.
 
 ## Setup
 
@@ -20,7 +20,7 @@ gem 'characteristics'
 ## Usage
 
 ```ruby
-char_info = Characteristics.new(character)
+char_info = Characteristics.create(character)
 char_info.valid? # => true / false
 char_info.unicode? # => true / false
 char_info.assigned? # => true / false
@@ -48,7 +48,7 @@ Other encodings are not supported, yet.
 
 ### `valid?`
 
-Validness is determined by Ruby's String#valid_encoding?
+Validness is determined by Ruby's `String#valid_encoding?`
 
 ### `unicode?`
 
@@ -66,7 +66,7 @@ Control characters are codepoints in the is [C0, delete or C1 control character 
 
 ### `blank?`
 
-The library includes a list of characters that might not be rendered visually. This list does not include unassigned codepoints, control characters (except for `\t`, `\n`, `\v`, `\f`, `\r`), or special formatting characters (right-to-left marker, variation selectors, etc).
+The library includes a list of characters that might not be rendered visually. This list does not include unassigned codepoints, control characters (except for `\t`, `\n`, `\v`, `\f`, `\r`), or special formatting characters (right-to-left markers, variation selectors, etc).
 
 ### `format?`
 
