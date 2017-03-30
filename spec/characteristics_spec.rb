@@ -168,6 +168,43 @@ describe Characteristics do
         refute bidi_control? "\x21"
       end
     end
+
+    describe "GB1988" do
+      let(:encoding) { "GB1988" }
+
+      it "is valid or not" do
+        assert valid? "\x21"
+        refute valid? "\x80"
+      end
+
+      it "is always assigned" do
+        assert assigned? "\x21"
+      end
+
+      it "is control or not" do
+        assert control? "\x1E"
+        assert control? "\x7F"
+        refute control? "\x67"
+      end
+
+      it "is blank or not" do
+        assert blank? "\x20"
+        refute blank? "\x21"
+      end
+
+      it "is separator or not" do
+        assert separator? "\n"
+        refute separator? "\x20"
+      end
+
+      it "is never format" do
+        refute format? "\x21"
+      end
+
+      it "is never bidi_control" do
+        refute bidi_control? "\x21"
+      end
+    end
   end
 
   describe ByteCharacteristics do

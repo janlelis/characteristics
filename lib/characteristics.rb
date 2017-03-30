@@ -10,7 +10,7 @@ require_relative "characteristics/unicode"
 class Characteristics
   def self.type_from_encoding_name(encoding_name)
     case encoding_name
-    when "US-ASCII"
+    when "US-ASCII", "GB1988"
       :ascii
     when "ASCII-8BIT"
       :binary

@@ -18,6 +18,10 @@ class AsciiCharacteristics < Characteristics
     @ord = char.ord if @is_valid
   end
 
+  def valid?
+    @is_valid && !(@encoding_name != "US-ASCII" && @ord >= 0x80)
+  end
+
   def unicode?
     false
   end

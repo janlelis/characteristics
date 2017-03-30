@@ -4,6 +4,7 @@
 
 * Add separator? property
 * Ensure all characteristics have a c0? / c1? method
+* Add GB1988 encoding (which is a 7bit ascii-like)
 
 ### 0.5.2
 

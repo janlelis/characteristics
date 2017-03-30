@@ -39,7 +39,7 @@ This library knows of four different kinds of encodings:
 - **:byte** Known single-byte encoding
   - *ISO-8859-X*, *Windows-125X*, *IBMX*, *CP85X*, *macX*, *TIS-620*, *Windows-874*, *KOI-X*
 - **:ascii** 7-Bit ASCII
-  - *US-ASCII*
+  - *US-ASCII*, *GB1988*
 - **:binary** Arbitrary string
   - *ASCII-8BIT*
 
