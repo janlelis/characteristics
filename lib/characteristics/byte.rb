@@ -183,6 +183,10 @@ class ByteCharacteristics < Characteristics
     EXTRA_BLANKS[@ord] =~ @encoding_name
   end
 
+  def separator?
+    SEPARATORS.include?(@ord)
+  end
+
   def format?
     FORMATS[@ord] =~ @encoding_name
   end

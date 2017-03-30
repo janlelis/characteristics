@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+### 0.6.0
+
+* Add separator? property
+
 ### 0.5.2
 
 * Add another Hangul blank (U+FFA0)

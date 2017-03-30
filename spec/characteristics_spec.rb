@@ -18,6 +18,10 @@ describe Characteristics do
     Characteristics.create(char.force_encoding(encoding)).blank?
   end
 
+  def separator?(char)
+    Characteristics.create(char.force_encoding(encoding)).separator?
+  end
+
   def format?(char)
     Characteristics.create(char.force_encoding(encoding)).format?
   end
@@ -50,6 +54,11 @@ describe Characteristics do
       it "is blank or not" do
         assert blank? "\x20"
         refute blank? "\x21"
+      end
+
+      it "is separator or not" do
+        assert separator? "\n"
+        refute separator? "\x20"
       end
 
       it "is format or not" do
@@ -107,6 +116,11 @@ describe Characteristics do
         refute blank? "\x21"
       end
 
+      it "is separator or not" do
+        assert separator? "\n"
+        refute separator? "\x20"
+      end
+
       it "is never format" do
         refute format? "\x21"
       end
@@ -139,6 +153,11 @@ describe Characteristics do
       it "is blank or not" do
         assert blank? "\x20"
         refute blank? "\x21"
+      end
+
+      it "is separator or not" do
+        assert separator? "\n"
+        refute separator? "\x20"
       end
 
       it "is never format" do
@@ -175,6 +194,11 @@ describe Characteristics do
         it "is blank or not" do
           assert blank? "\x20"
           refute blank? "\x21"
+        end
+
+        it "is separator or not" do
+          assert separator? "\n"
+          refute separator? "\x20"
         end
 
         it "is never format" do
@@ -227,6 +251,11 @@ describe Characteristics do
           refute blank? "\x21"
         end
 
+        it "is separator or not" do
+          assert separator? "\n"
+          refute separator? "\x20"
+        end
+
         it "is never format" do
           refute format? "\x21"
         end
@@ -269,6 +298,11 @@ describe Characteristics do
         it "is blank or not" do
           assert blank? "\x20"
           refute blank? "\x21"
+        end
+
+        it "is separator or not" do
+          assert separator? "\n"
+          refute separator? "\x20"
         end
 
         it "is never format" do
@@ -320,6 +354,11 @@ describe Characteristics do
           refute blank? "\x21"
         end
 
+        it "is separator or not" do
+          assert separator? "\n"
+          refute separator? "\x20"
+        end
+
         it "is never format" do
           refute format? "\x21"
         end
@@ -363,6 +402,11 @@ describe Characteristics do
           refute blank? "\x21"
         end
 
+        it "is separator or not" do
+          assert separator? "\n"
+          refute separator? "\x20"
+        end
+
         it "is never format" do
           refute format? "\x21"
         end
@@ -392,6 +436,11 @@ describe Characteristics do
         it "is blank or not" do
           assert blank? "\x20"
           refute blank? "\x21"
+        end
+
+        it "is separator or not" do
+          assert separator? "\n"
+          refute separator? "\x20"
         end
 
         it "is never format" do
@@ -426,6 +475,11 @@ describe Characteristics do
           refute blank? "\x21"
         end
 
+        it "is separator or not" do
+          assert separator? "\n"
+          refute separator? "\x20"
+        end
+
         it "is never format" do
           refute format? "\x21"
         end
@@ -454,6 +508,11 @@ describe Characteristics do
         it "is blank or not" do
           assert blank? "\x20"
           refute blank? "\x21"
+        end
+
+        it "is separator or not" do
+          assert separator? "\n"
+          refute separator? "\x20"
         end
 
         it "is never format" do

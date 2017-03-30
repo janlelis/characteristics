@@ -47,6 +47,10 @@ class BinaryCharacteristics < Characteristics
     BLANKS.include?(@ord) || SEPARATORS.include?(@ord)
   end
 
+  def separator?
+    SEPARATORS.include?(@ord)
+  end
+
   def format?
     false
   end

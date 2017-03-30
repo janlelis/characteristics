@@ -26,6 +26,7 @@ char_info.unicode? # => true / false
 char_info.assigned? # => true / false
 char_info.control? # => true / false
 char_info.blank? # => true / false
+char_info.separator? # => true / false
 char_info.format? # => true / false
 ```
 
@@ -66,7 +67,11 @@ Control characters are codepoints in the is [C0, delete or C1 control character 
 
 ### `blank?`
 
-The library includes a list of characters that might not be rendered visually. This list does not include unassigned codepoints, control characters (except for `\t`, `\n`, `\v`, `\f`, `\r`), or special formatting characters (right-to-left markers, variation selectors, etc).
+The library includes a list of characters that might not be rendered visually. This list does not include unassigned codepoints, control characters (except for `\t`, `\n`, `\v`, `\f`, `\r`, and `\u{85}` in Unicode), or special formatting characters (right-to-left markers, variation selectors, etc).
+
+### `separator?`
+
+Returns true if character is considered a separator. All separators also return true for the `blank?` check. In Unicode, the following characters are separators: `\n`, `\v`, `\f`, `\r`, `\u{85}` (next line), `\u{2028}` (line separator), and `\u{2029}` (paragraph separator)
 
 ### `format?`
 
