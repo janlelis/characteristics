@@ -43,6 +43,10 @@ class BinaryCharacteristics < Characteristics
     @ord == 0x7F
   end
 
+  def c1?
+    false
+  end
+
   def blank?
     BLANKS.include?(@ord) || SEPARATORS.include?(@ord)
   end

@@ -3,6 +3,7 @@
 ### 0.6.0
 
 * Add separator? property
+* Ensure all characteristics have a c0? / c1? method
 
 ### 0.5.2
 

@@ -63,6 +63,15 @@ class Characteristics
   def control?
   end
 
+  def c0?
+  end
+
+  def delete?
+  end
+
+  def c1?
+  end
+
   def blank?
   end
 
