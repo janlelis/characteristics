@@ -5,6 +5,7 @@
 * Add more Unicode properties
   * variation_selector?
   * tag?
+  * ignorable?
   * noncharacter?
 
 ### 0.6.0

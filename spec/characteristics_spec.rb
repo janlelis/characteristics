@@ -87,6 +87,12 @@ describe Characteristics do
         assert Characteristics.create("\u{10FFFF}").noncharacter?
         refute Characteristics.create("a").noncharacter?
       end
+
+      it "is ignorable or not" do
+        assert Characteristics.create("\u{AD}").ignorable?
+        assert Characteristics.create("\u{E0000}").ignorable?
+        refute Characteristics.create(" ").ignorable?
+      end
     end
 
     describe "Japanese Emojis" do

@@ -123,6 +123,26 @@ class UnicodeCharacteristics < Characteristics
     0x10FFFE, 0x10FFFF,
   ].freeze
 
+  IGNORABLE = [
+    0x00AD,
+    0x034F,
+    0x061C,
+    *0x115F..0x1160,
+    *0x17B4..0x17B5,
+    *0x180B..0x180E,
+    *0x200B..0x200F,
+    *0x202A..0x202E,
+    *0x2060..0x206F,
+    0x3164,
+    *0xFE00..0xFE0F,
+    0xFEFF,
+    0xFFA0,
+    *0xFFF0..0xFFF8,
+    *0x1BCA0..0x1BCA3,
+    *0x1D173..0x1D17A,
+    *0xE0000..0xE0FFF,
+  ].freeze
+
   KDDI = [
     *0xE468..0xE5DF,
     *0xEA80..0xEB8E,
@@ -204,6 +224,10 @@ class UnicodeCharacteristics < Characteristics
 
   def noncharacter?
     @is_valid && NONCHARACTERS.include?(@ord)
+  end
+
+  def ignorable?
+    @is_valid && IGNORABLE.include?(@ord)
   end
 
   # emoji

@@ -6,7 +6,7 @@ A Ruby library that provides additional info about characters:¹
 - Is a character assigned?
 - Is a character a special control character?
 
-Extra data is available for Unicode characters (see list of properties below).
+Extra data is available for Unicode characters (see below).
 
 The [unibits](https://github.com/janlelis/unibits) and [uniscribe](https://github.com/janlelis/uniscribe) gems makes use of this data to visualize it accordingliy.
 
@@ -23,6 +23,7 @@ gem 'characteristics'
 ## Usage
 
 ```ruby
+# All supported encodings
 char_info = Characteristics.create(character)
 char_info.valid? # => true / false
 char_info.unicode? # => true / false
@@ -31,6 +32,13 @@ char_info.control? # => true / false
 char_info.blank? # => true / false
 char_info.separator? # => true / false
 char_info.format? # => true / false
+
+# Unicode characters
+char_info = Characteristics.create(character)
+char_info.variation_selector? # => true / false
+char_info.tag? # => true / false
+char_info.ignorable? # => true / false
+char_info.noncharacter? # => true / false
 ```
 
 ## Types of Encodings
@@ -86,15 +94,19 @@ This flag is *true* only for special formatting characters, which are not contro
 
 #### `variation_selector?`
 
-*true* for [variation selectors](https://en.wikipedia.org/wiki/Variation_Selector)
+*true* for [variation selectors](https://en.wikipedia.org/wiki/Variation_Selector).
 
 #### `tag?`
 
-*true* for [tags](https://en.wikipedia.org/wiki/Tags_(Unicode_block))
+*true* for [tags](https://en.wikipedia.org/wiki/Tags_(Unicode_block)).
+
+#### `ignorable?`
+
+*true* for characters which might not be implemented, and thus, might render no visible glyph.
 
 #### `noncharacter?`
 
-*true* if codepoint will never be assigned in a future standard of Unicode
+*true* if codepoint will never be assigned in a future standard of Unicode.
 
 ## Todo
 
