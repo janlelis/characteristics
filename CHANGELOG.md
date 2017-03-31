@@ -1,5 +1,12 @@
 ## CHANGELOG
 
+### 0.7.0
+
+* Add more Unicode properties
+  * variation_selector?
+  * tag?
+  * noncharacter?
+
 ### 0.6.0
 
 * Add separator? property

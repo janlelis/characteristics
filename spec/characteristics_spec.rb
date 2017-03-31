@@ -41,13 +41,13 @@ describe Characteristics do
 
       it "is assigned or not" do
         assert assigned? "\x21"
-        refute assigned? "\uFFEF"
+        refute assigned? "\u{FFEF}"
       end
 
       it "is control or not" do
         assert control? "\x1E"
         assert control? "\x7F"
-        assert control? "\u0080"
+        assert control? "\u{0080}"
         refute control? "\x67"
       end
 
@@ -62,32 +62,49 @@ describe Characteristics do
       end
 
       it "is format or not" do
-        assert format? "\uFFF9"
+        assert format? "\u{FFF9}"
         refute format? "\x21"
       end
 
       it "is bidi_control or not" do
-        assert bidi_control? "\u202D"
+        assert bidi_control? "\u{202D}"
         refute bidi_control? "\x21"
+      end
+    end
+
+    describe "Unicode Properties" do
+      it "is variation_selector or not" do
+        assert Characteristics.create("\u{FE00}").variation_selector?
+        refute Characteristics.create("a").variation_selector?
+      end
+
+      it "is tag or not" do
+        assert Characteristics.create("\u{E0020}").tag?
+        refute Characteristics.create("a").tag?
+      end
+
+      it "is noncharacter or not" do
+        assert Characteristics.create("\u{10FFFF}").noncharacter?
+        refute Characteristics.create("a").noncharacter?
       end
     end
 
     describe "Japanese Emojis" do
       it "can be a KDDI emoji" do
         encoding = "UTF8-KDDI"
-        assert Characteristics.create("\uE468".force_encoding(encoding)).kddi?
+        assert Characteristics.create("\u{E468}".force_encoding(encoding)).kddi?
         refute Characteristics.create("A".force_encoding(encoding)).kddi?
       end
 
       it "can be a SoftBank emoji" do
         encoding = "UTF8-SoftBank"
-        assert Characteristics.create("\uE001".force_encoding(encoding)).softbank?
+        assert Characteristics.create("\u{E001}".force_encoding(encoding)).softbank?
         refute Characteristics.create("A".force_encoding(encoding)).softbank?
       end
 
       it "can be a DoCoMo emoji" do
         encoding = "UTF8-DoCoMo"
-        assert Characteristics.create("\uE63E".force_encoding(encoding)).docomo?
+        assert Characteristics.create("\u{E63E}".force_encoding(encoding)).docomo?
         refute Characteristics.create("A".force_encoding(encoding)).docomo?
       end
     end

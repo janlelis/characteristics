@@ -1,13 +1,16 @@
 # Characteristics [![[version]](https://badge.fury.io/rb/characteristics.svg)](http://badge.fury.io/rb/characteristics)  [![[travis]](https://travis-ci.org/janlelis/characteristics.svg)](https://travis-ci.org/janlelis/characteristics)
 
-A Ruby library which provides some basic information about how characters behave in different encodings:
+A Ruby library that provides additional info about characters:¹
 
-- Is a character valid according to its encoding?
+- Could a character be invisible (blank)?
 - Is a character assigned?
 - Is a character a special control character?
-- Could a character be invisible (blank)?
+
+Extra data is available for Unicode characters (see list of properties below).
 
 The [unibits](https://github.com/janlelis/unibits) and [uniscribe](https://github.com/janlelis/uniscribe) gems makes use of this data to visualize it accordingliy.
+
+¹ in the sense of [codepoints](https://en.wikipedia.org/wiki/Codepoint)
 
 ## Setup
 
@@ -43,39 +46,55 @@ This library knows of four different kinds of encodings:
 - **:binary** Arbitrary string
   - *ASCII-8BIT*
 
-Other encodings are not supported, yet.
+Other encodings are currently not supported.
 
-## Predicates
+## Properties
 
-### `valid?`
+### General
+
+#### `valid?`
 
 Validness is determined by Ruby's `String#valid_encoding?`
 
-### `unicode?`
+#### `unicode?`
 
-`true` for Unicode encodings (`UTF-X`)
+**true** for Unicode encodings (`UTF-X`)
 
-### `control?`
+#### `control?`
 
 Control characters are codepoints in the is [C0, delete or C1 control character range](https://en.wikipedia.org/wiki/C0_and_C1_control_codes). Characters in this range of [IBM codepage 437](https://en.wikipedia.org/wiki/Code_page_437) based encodings are always treated as control characters.
 
-### `assigned?`
+#### `assigned?`
 
 - All valid ASCII and BINARY characters are considered assigned
 - For other byte based encodings, a character is considered assigned if it is not on the exception list included in this library. C0 control characters (and `\x7F`) are always considered assigned. C1 control characters are treated as assigned, if the encoding generally does not assign characters in the C1 region.
 - For Unicode, the general category is considered
 
-### `blank?`
+#### `blank?`
 
 The library includes a list of characters that might not be rendered visually. This list does not include unassigned codepoints, control characters (except for `\t`, `\n`, `\v`, `\f`, `\r`, and `\u{85}` in Unicode), or special formatting characters (right-to-left markers, variation selectors, etc).
 
-### `separator?`
+#### `separator?`
 
 Returns true if character is considered a separator. All separators also return true for the `blank?` check. In Unicode, the following characters are separators: `\n`, `\v`, `\f`, `\r`, `\u{85}` (next line), `\u{2028}` (line separator), and `\u{2029}` (paragraph separator)
 
-### `format?`
+#### `format?`
 
-This flag is `true` only for special formatting characters, which are not control characters, like Right-to-left marks. In Unicode, this means codepoints with the General Category of **Cf**.
+This flag is *true* only for special formatting characters, which are not control characters, like right-to-left marks. In Unicode, this means codepoints with the General Category of **Cf**.
+
+### Additional Unicode Properties
+
+#### `variation_selector?`
+
+*true* for [variation selectors](https://en.wikipedia.org/wiki/Variation_Selector)
+
+#### `tag?`
+
+*true* for [tags](https://en.wikipedia.org/wiki/Tags_(Unicode_block))
+
+#### `noncharacter?`
+
+*true* if codepoint will never be assigned in a future standard of Unicode
 
 ## Todo
 

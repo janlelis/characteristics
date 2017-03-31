@@ -91,6 +91,38 @@ class UnicodeCharacteristics < Characteristics
     0x2069,
   ].freeze
 
+  VARIATION_SELECTORS = [
+    *0x180B..0x180D,
+    *0xFE00..0xFE0F,
+    *0xE0100..0xE01EF,
+  ].freeze
+
+  TAGS = [
+    0xE0001,
+    *0xE0020..0xE007F,
+  ].freeze
+
+  NONCHARACTERS = [
+    *0xFDD0..0xFDEF,
+    0xFFFE,   0xFFFF,
+    0x1FFFE,  0x1FFFF,
+    0x2FFFE,  0x2FFFF,
+    0x3FFFE,  0x3FFFF,
+    0x4FFFE,  0x4FFFF,
+    0x5FFFE,  0x5FFFF,
+    0x6FFFE,  0x6FFFF,
+    0x7FFFE,  0x7FFFF,
+    0x8FFFE,  0x8FFFF,
+    0x9FFFE,  0x9FFFF,
+    0xAFFFE,  0xAFFFF,
+    0xBFFFE,  0xBFFFF,
+    0xCFFFE,  0xCFFFF,
+    0xDFFFE,  0xDFFFF,
+    0xEFFFE,  0xEFFFF,
+    0xFFFFE,  0xFFFFF,
+    0x10FFFE, 0x10FFFF,
+  ].freeze
+
   attr_reader :category
 
   def initialize(char)
@@ -141,6 +173,22 @@ class UnicodeCharacteristics < Characteristics
   def bidi_control?
     @is_valid && BIDI_CONTROL.include?(@ord)
   end
+
+  # unicode specific
+
+  def variation_selector?
+    @is_valid && VARIATION_SELECTORS.include?(@ord)
+  end
+
+  def tag?
+    @is_valid && TAGS.include?(@ord)
+  end
+
+  def noncharacter?
+    @is_valid && NONCHARACTERS.include?(@ord)
+  end
+
+  # emoji
 
   def kddi?
     @is_valid &&
