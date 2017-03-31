@@ -94,23 +94,27 @@ This flag is *true* only for special formatting characters, which are not contro
 
 #### `variation_selector?`
 
-*true* for [variation selectors](https://en.wikipedia.org/wiki/Variation_Selector).
+**true** for [variation selectors](https://en.wikipedia.org/wiki/Variation_Selector).
 
 #### `tag?`
 
-*true* for [tags](https://en.wikipedia.org/wiki/Tags_(Unicode_block)).
+**true** for [tags](https://en.wikipedia.org/wiki/Tags_(Unicode_block)).
 
 #### `ignorable?`
 
-*true* for characters which might not be implemented, and thus, might render no visible glyph.
+**true** for characters which might not be implemented, and thus, might render no visible glyph.
 
 #### `noncharacter?`
 
-*true* if codepoint will never be assigned in a future standard of Unicode.
+**true** if codepoint will never be assigned in a future standard of Unicode.
 
 ## Todo
 
 - Support all non-dummy encodings that Ruby supports
+
+## Also See
+
+- [Symbolify](https://github.com/janlelis/symbolify)
 
 ## MIT License
 
