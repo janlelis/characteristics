@@ -123,6 +123,24 @@ class UnicodeCharacteristics < Characteristics
     0x10FFFE, 0x10FFFF,
   ].freeze
 
+  KDDI = [
+    *0xE468..0xE5DF,
+    *0xEA80..0xEB8E,
+  ].freeze
+
+  SOFTBANK = [
+    *0xE001..0xE05A,
+    *0xE101..0xE15A,
+    *0xE201..0xE25A,
+    *0xE301..0xE34D,
+    *0xE401..0xE44C,
+    *0xE501..0xE53E,
+  ].freeze
+
+  DOCOMO = [
+    *0xE63E..0xE757,
+  ].freeze
+
   attr_reader :category
 
   def initialize(char)
@@ -193,25 +211,19 @@ class UnicodeCharacteristics < Characteristics
   def kddi?
     @is_valid &&
     encoding_has_kddi? &&
-    ( @ord >= 0xE468 && @ord <= 0xE5DF ||
-      @ord >= 0xEA80 && @ord <= 0xEB8E )
+    KDDI.include?(@ord)
   end
 
   def softbank?
     @is_valid &&
     encoding_has_softbank? &&
-    ( @ord >= 0xE001 && @ord <= 0xE05A ||
-      @ord >= 0xE101 && @ord <= 0xE15A ||
-      @ord >= 0xE201 && @ord <= 0xE25A ||
-      @ord >= 0xE301 && @ord <= 0xE34D ||
-      @ord >= 0xE401 && @ord <= 0xE44C ||
-      @ord >= 0xE501 && @ord <= 0xE53E )
+    SOFTBANK.include?(@ord)
   end
 
   def docomo?
     @is_valid &&
     encoding_has_docomo? &&
-    ( @ord >= 0xE63E && @ord <= 0xE757 )
+    DOCOMO.include?(@ord)
   end
 
   private
