@@ -3,6 +3,9 @@
 require "unicode/categories"
 
 class UnicodeCharacteristics < Characteristics
+  # Note that this list is maintained by hand and might not cover the latest Unicode updates
+  # Please open an issue or pull request is you find another character that is rendered invisible:
+  # - https://github.com/janlelis/characteristics/issues/new
   BLANKS = [
     0x0009,
     0x0020,
