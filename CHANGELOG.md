@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+### 0.8.0
+
+* Unicode 10 (general categories)
+
 ### 0.7.0
 
 * Add more Unicode properties
