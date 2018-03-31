@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+### 1.0.0
+
+* Mark as production-ready, no API changes
+
 ### 0.8.0
 
 * Unicode 10 (general categories)
