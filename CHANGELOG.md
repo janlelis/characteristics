@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+### Next
+
+* Unicode 11 (general categories)
+
 ### 1.0.0
 
 * Mark as production-ready, no API changes
