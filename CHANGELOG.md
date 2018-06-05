@@ -1,6 +1,6 @@
 ## CHANGELOG
 
-### Next
+### 1.1.0
 
 * Unicode 11 (general categories)
 
