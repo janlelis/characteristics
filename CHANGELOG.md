@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+### Next
+
+* Unicode 12 (general categories)
+
 ### 1.1.0
 
 * Unicode 11 (general categories)

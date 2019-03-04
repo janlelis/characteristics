@@ -1,4 +1,4 @@
-# Characteristics [![[version]](https://badge.fury.io/rb/characteristics.svg)](http://badge.fury.io/rb/characteristics)  [![[travis]](https://travis-ci.org/janlelis/characteristics.svg)](https://travis-ci.org/janlelis/characteristics)
+# Characteristics [![[version]](https://badge.fury.io/rb/characteristics.svg)](https://badge.fury.io/rb/characteristics)  [![[travis]](https://travis-ci.org/janlelis/characteristics.svg)](https://travis-ci.org/janlelis/characteristics)
 
 A Ruby library that provides additional info about characters:¹
 
@@ -8,7 +8,7 @@ A Ruby library that provides additional info about characters:¹
 
 Extra data is available for Unicode characters (see below).
 
-The [unibits](https://github.com/janlelis/unibits) and [uniscribe](https://github.com/janlelis/uniscribe) gems makes use of this data to visualize it accordingliy.
+The [unibits](https://github.com/janlelis/unibits) and [uniscribe](https://github.com/janlelis/uniscribe) gems makes use of this data to visualize it accordingly.
 
 ¹ in the sense of [codepoints](https://en.wikipedia.org/wiki/Codepoint)
 
