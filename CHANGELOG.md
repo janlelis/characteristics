@@ -1,6 +1,6 @@
 ## CHANGELOG
 
-### Next
+### 1.2.0
 
 * Unicode 12 (general categories)
 
