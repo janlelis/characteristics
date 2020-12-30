@@ -1,8 +1,9 @@
 ## CHANGELOG
 
-### 1.3.0 (unreleased)
+### 1.3.0
 
 * Unicode 13 (general categories)
+* Relax Ruby version requirement to allow Ruby 3.0
 
 ### 1.2.0
 
