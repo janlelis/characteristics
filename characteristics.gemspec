@@ -18,5 +18,5 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
 
   gem.required_ruby_version = ">= 2.0"
-  gem.add_dependency 'unicode-categories', '~> 1.4'
+  gem.add_dependency 'unicode-categories', '~> 1.6'
 end
