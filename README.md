@@ -1,4 +1,4 @@
-# Characteristics [![[version]](https://badge.fury.io/rb/characteristics.svg)](https://badge.fury.io/rb/characteristics)  [![[travis]](https://travis-ci.org/janlelis/characteristics.svg)](https://travis-ci.org/janlelis/characteristics)
+# Characteristics [![[version]](https://badge.fury.io/rb/characteristics.svg)](https://badge.fury.io/rb/characteristics)  [![[ci]](https://github.com/janlelis/characteristics/workflows/Test/badge.svg)](https://github.com/janlelis/characteristics/actions?query=workflow%3ATest)
 
 A Ruby library that provides additional info about characters:¹
 
