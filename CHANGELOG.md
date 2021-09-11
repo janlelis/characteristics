@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+### 1.4.0 (unreleased)
+
+* Unicode 14 (general categories)
+
 ### 1.3.0
 
 * Unicode 13 (general categories)

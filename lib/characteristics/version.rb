@@ -2,5 +2,5 @@
 
 class Characteristics
   VERSION = "1.3.0"
-  UNICODE_VERSION = "13.0.0"
+  UNICODE_VERSION = "14.0.0"
 end
