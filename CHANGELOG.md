@@ -1,6 +1,6 @@
 ## CHANGELOG
 
-### 1.4.0 (unreleased)
+### 1.4.0
 
 * Unicode 14 (general categories)
 
