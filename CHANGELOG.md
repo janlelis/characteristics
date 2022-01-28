@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+### 1.4.1
+
+* Add NO-BREAK SPACE to blanks 😅
+
 ### 1.4.0
 
 * Unicode 14 (general categories)

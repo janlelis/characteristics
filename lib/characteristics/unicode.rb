@@ -9,6 +9,7 @@ class UnicodeCharacteristics < Characteristics
   BLANKS = [
     0x0009,
     0x0020,
+    0x00A0,
     0x00AD,
     0x034F,
     0x061C,
