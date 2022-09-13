@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+### 1.5.0 (unreleased)
+
+* Unicode 15 (general categories)
+
 ### 1.4.1
 
 * Add NO-BREAK SPACE to blanks 😅
