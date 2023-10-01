@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+### 1.6.0 (unreleased)
+
+* Unicode 15.1 (general categories)
+
 ### 1.5.0
 
 * Unicode 15 (general categories)
