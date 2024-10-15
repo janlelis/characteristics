@@ -8,7 +8,7 @@ Gem::Specification.new do |gem|
   gem.summary       = "Basic character properties"
   gem.description   = "Provides basic information about how characters behave in different encodings"
   gem.authors       = ["Jan Lelis"]
-  gem.email         = ["hi@ruby.consulting.com"]
+  gem.email         = ["hi@ruby.consulting"]
   gem.homepage      = "https://github.com/janlelis/characteristics"
   gem.license       = "MIT"
 
