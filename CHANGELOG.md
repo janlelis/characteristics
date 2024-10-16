@@ -1,5 +1,10 @@
 ## CHANGELOG
 
+### 1.7.1
+
+* Fixes in README and GEMSPEC
+* Remove "U+110B1 Kaithi Vowel Sign I" from blanks
+
 ### 1.7.0
 
 * Unicode 16.0 (general categories)

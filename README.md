@@ -108,14 +108,10 @@ This flag is *true* only for special formatting characters, which are not contro
 
 **true** if codepoint will never be assigned in a future standard of Unicode.
 
-## Todo
-
-- Support all non-dummy encodings that Ruby supports
-
 ## Also See
 
 - [Symbolify](https://github.com/janlelis/symbolify)
 
 ## MIT License
 
-Copyright (C) 2017-2022 Jan Lelis <https://janlelis.com>. Released under the MIT license.
+Copyright (C) 2017-2024 Jan Lelis <https://janlelis.com>. Released under the MIT license.
