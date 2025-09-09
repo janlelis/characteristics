@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
 class Characteristics
-  VERSION = "1.7.1"
-  UNICODE_VERSION = "16.0.0"
+  VERSION = "1.8.0"
+  UNICODE_VERSION = "17.0.0"
 end

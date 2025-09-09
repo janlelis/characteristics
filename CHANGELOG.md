@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+### 1.8.0
+
+* Unicode 17.0 (general categories)
+
 ### 1.7.1
 
 * Fixes in README and GEMSPEC
