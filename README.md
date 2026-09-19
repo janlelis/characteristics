@@ -114,4 +114,4 @@ This flag is *true* only for special formatting characters, which are not contro
 
 ## MIT License
 
-Copyright (C) 2017-2024 Jan Lelis <https://janlelis.com>. Released under the MIT license.
+Copyright (C) 2017-2026 Jan Lelis <https://janlelis.com>. Released under the MIT license.
