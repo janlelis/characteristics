@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+### 1.8.0 (unreleased)
+
+* Unicode 18.0 (general categories)
+
 ### 1.8.0
 
 * Unicode 17.0 (general categories)
